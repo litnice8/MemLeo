@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Интернет-магазин</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+   <body>
+    <header class="header">
+        <div class="container">
+            <div class="header-wrap">
+                <a href="index.html" class="logo-link">
+    			<div class="logo">MLShop</div>
+		</a>
+                
+                <nav class="nav-left">
+                    <a href="#">Новое</a>
+                    <a href="#">Электроника</a>
+                    <a href="#">Скидки</a>
+                </nav>
+                
+                <div class="nav-right">
+                    <a href="catalog.html">
+                        <img src="img/search.png" alt="Поиск" width="20" height="20">
+                    </a>
+                    <a href="cart.html">
+                        <img src="img/Heart.png" alt="Избранное" width="20" height="20">
+                    </a>
+                    <a href="profile.html">
+                        <img src="img/account.png" alt="Профиль" width="20" height="20">
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <div class="container">
+            <section class="promo-block">
+                <img src="img/sale1.png" alt="Рекламный товар" class="promo-image">
+                
+                <div class="discount-badge">
+                    <span class="discount-text">-40%</span>
+                </div>
+            </section>
+            
+	    <section class="category-block" id="electronics">
+    		<div class="category-header">
+        		<h2 class="category-title">Электроника</h2>
+        		<div class="carousel-controls">
+            			<button class="carousel-btn prev-btn" aria-label="Назад">‹</button>
+            			<button class="carousel-btn next-btn" aria-label="Вперед">›</button>
+        		</div>
+   		 </div>
+
+    		 <div class="carousel-wrapper">
+        	 	<div class="carousel-track">
+            			<a href="product.html?id=1" class="product-link">
+                			<div class="product-card">
+                    				<div class="product-image-wrapper">
+                        				<img src="img/len1.jpg" alt="Товар 1" class="product-image">
+                    				</div>
+                    				<h3 class="product-name">Lenovo IdeaPad 3 15IIL05</h3>
+                    				<p class="product-price">49 999 ₽</p>
+                			</div>
+            			</a>
+            			<a href="product.html?id=2" class="product-link">
+                			<div class="product-card">
+                    				<div class="product-image-wrapper">
+                        				<img src="img/ap1.jpg" alt="Товар 2" class="product-image">
+                    				</div>
+                    				<h3 class="product-name">Apple 2024 MacBook Air 15</h3>
+                    				<p class="product-price">39 999 ₽</p>
+                			</div>
+            			</a>
+            			<a href="product.html?id=3" class="product-link">
+                			<div class="product-card">
+                    				<div class="product-image-wrapper">
+                        				<img src="img/ap2.jpg" alt="Товар 3" class="product-image">
+                    				</div>
+                    				<h3 class="product-name">Apple MacBook Air M2</h3>
+                    				<p class="product-price">18 999 ₽</p>
+                			</div>
+            			</a>
+            			<a href="product.html?id=4" class="product-link">
+                			<div class="product-card">
+                    				<div class="product-image-wrapper">
+                        				<img src="img/ap3.jpg" alt="Товар 4" class="product-image">
+                    				</div>
+                    				<h3 class="product-name">MacBook Air 13</h3>
+                    				<p class="product-price">24 999 ₽</p>
+                			</div>
+            			</a>
+            			<a href="product.html?id=5" class="product-link">
+                			<div class="product-card">
+                    				<div class="product-image-wrapper">
+                        				<img src="img/aw1.jpg" alt="Товар 5" class="product-image">
+                    				</div>
+                    				<h3 class="product-name">Apple Watch SE (2nd Gen)</h3>
+                    				<p class="product-price">31 999 ₽</p>
+                			</div>
+            			</a>
+            			<a href="product.html?id=6" class="product-link">
+                			<div class="product-card">
+                    				<div class="product-image-wrapper">
+                        				<img src="img/aw2.jpg" alt="Товар 6" class="product-image">
+                    				</div>
+                    				<h3 class="product-name">Apple Watch Series 10</h3>
+                    				<p class="product-price">45 999 ₽</p>
+                			</div>
+            			</a>
+            			<a href="product.html?id=7" class="product-link">
+                			<div class="product-card">
+                    				<div class="product-image-wrapper">
+                        				<img src="img/aw3.jpg" alt="Товар 7" class="product-image">
+                    				</div>
+                    				<h3 class="product-name">Apple Watch SE 3</h3>
+                    				<p class="product-price">18 999 ₽</p>
+                			</div>
+            			</a>
+        		</div>
+    		</div>
+	    </section>
+	    <section class="category-block" id="new">
+    		<div class="category-header">
+        		<h2 class="category-title">Новое</h2>
+        		<div class="carousel-controls">
+            			<button class="carousel-btn prev-btn-new" aria-label="Назад">‹</button>
+            			<button class="carousel-btn next-btn-new" aria-label="Вперед">›</button>
+        		</div>
+    		</div>
+    
+    		<div class="carousel-wrapper">
+        		<div class="carousel-track-new">
+            			<a href="product.html?id=8" class="product-link">
+                			<div class="product-card">
+                    				<div class="product-image-wrapper">
+                        				<img src="img/moto30.jpg" alt="Товар 1" class="product-image">
+                    				</div>
+                    				<h3 class="product-name">Motorola Edge 30 Pro</h3>
+                    				<p class="product-price">10 000 ₽</p>
+                			</div>
+            			</a>
+            			<a href="product.html?id=9" class="product-link">
+                			<div class="product-card">
+                    				<div class="product-image-wrapper">
+                        				<img src="img/motog24.jpg" alt="Товар 2" class="product-image">
+                    				</div>
+                    				<h3 class="product-name">Motorola Moto g24</h3>
+                    				<p class="product-price">9 999 ₽</p>
+                			</div>
+            			</a>
+            			<a href="product.html?id=10" class="product-link">
+                			<div class="product-card">
+                    				<div class="product-image-wrapper">
+                        				<img src="img/ss25.jpg" alt="Товар 3" class="product-image">
+                    				</div>
+                    				<h3 class="product-name">Samsung Galaxy S25 128GB</h3>
+                    				<p class="product-price">11 999 ₽</p>
+                			</div>
+            			</a>
+            			<a href="product.html?id=11" class="product-link">
+                			<div class="product-card">
+                    				<div class="product-image-wrapper">
+                        				<img src="img/ss24.jpg" alt="Товар 4" class="product-image">
+                    				</div>
+                    				<h3 class="product-name">Samsung Galaxy S24</h3>
+                    				<p class="product-price">10 999 ₽</p>
+                			</div>
+            			</a>
+            			<a href="product.html?id=12" class="product-link">
+                			<div class="product-card">
+                    				<div class="product-image-wrapper">
+                        				<img src="img/ss26.jpg" alt="Товар 5" class="product-image">
+                    				</div>
+                    				<h3 class="product-name">Samsung Galaxy S26</h3>
+                    				<p class="product-price">15 999 ₽</p>
+                			</div>
+            			</a>
+            			<a href="product.html?id=13" class="product-link">
+                			<div class="product-card">
+                    				<div class="product-image-wrapper">
+                        				<img src="img/iP15.jpg" alt="Товар 6" class="product-image">
+                    				</div>
+                    				<h3 class="product-name">Apple iPhone 15</h3>
+                    				<p class="product-price">8 999 ₽</p>
+                			</div>
+            			</a>
+            			<a href="product.html?id=14" class="product-link">
+                			<div class="product-card">
+                    				<div class="product-image-wrapper">
+                        				<img src="img/iP16.jpg" alt="Товар 7" class="product-image">
+                    				</div>
+                    				<h3 class="product-name">Apple iPhone 16</h3>
+                    				<p class="product-price">9 999 ₽</p>
+                			</div>
+            			</a>
+            			<a href="product.html?id=15" class="product-link">
+                			<div class="product-card">
+                    				<div class="product-image-wrapper">
+                        				<img src="img/iP17.jpg" alt="Товар 8" class="product-image">
+                    				</div>
+                    				<h3 class="product-name">Apple iPhone 17</h3>
+                    				<p class="product-price">14 999 ₽</p>
+                			</div>
+            			</a>
+    			</div>
+		</div>
+	    </section>
+
+            <section class="wide-banners">
+                <img src="img/bann1.png" alt="Баннер" class="wide-banner">
+                <div class="video-wrapper">
+                    <video controls class="wide-banner">
+                        <source src="img/vide1.mp4" type="video/mp4">
+                        <source src="img/vide1.webm" type="video/webm">
+                        Ваш браузер не поддерживает видео.
+                    </video>
+                    
+                    <img src="img/sams1.png" alt="Нажмите для воспроизведения" class="video-overlay">
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p>© 2026 MLShop. Все права защищены.</p>
+        </div>
+    </footer>
+</body>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            function initCarousel(trackSelector, prevBtnSelector, nextBtnSelector) {
+                const track = document.querySelector(trackSelector);
+                const prevBtn = document.querySelector(prevBtnSelector);
+                const nextBtn = document.querySelector(nextBtnSelector);
+                
+                if (!track || !prevBtn || !nextBtn) return;
+                
+                function getCardWidth() {
+                    const card = track.querySelector('.product-card');
+                    if (!card) return 200;
+                    return card.offsetWidth + 20;
+                }
+                
+                function getMaxIndex() {
+                    const wrapper = track.closest('.carousel-wrapper');
+                    if (!wrapper) return track.children.length - 1;
+                    const wrapperWidth = wrapper.offsetWidth;
+                    const cardWidth = getCardWidth();
+                    const visibleCards = Math.floor(wrapperWidth / cardWidth);
+                    return Math.max(0, track.children.length - visibleCards);
+                }
+                
+                let currentIndex = 0;
+                let maxIndex = getMaxIndex();
+                let cardWidth = getCardWidth();
+                
+                function scrollToIndex(index) {
+                    if (index < 0) index = 0;
+                    if (index > maxIndex) index = maxIndex;
+                    
+                    currentIndex = index;
+                    const offset = -currentIndex * cardWidth;
+                    track.style.transform = `translateX(${offset}px)`;
+                    
+                    prevBtn.disabled = (currentIndex === 0);
+                    nextBtn.disabled = (currentIndex === maxIndex);
+                }
+                
+                prevBtn.addEventListener('click', function() {
+                    scrollToIndex(currentIndex - 1);
+                });
+                
+                nextBtn.addEventListener('click', function() {
+                    scrollToIndex(currentIndex + 1);
+                });
+                
+                let resizeTimeout;
+                window.addEventListener('resize', function() {
+                    clearTimeout(resizeTimeout);
+                    resizeTimeout = setTimeout(() => {
+                        cardWidth = getCardWidth();
+                        maxIndex = getMaxIndex();
+                        if (currentIndex > maxIndex) {
+                            scrollToIndex(maxIndex);
+                        } else {
+                            scrollToIndex(currentIndex);
+                        }
+                    }, 200);
+                });
+                
+                setTimeout(() => {
+                    cardWidth = getCardWidth();
+                    maxIndex = getMaxIndex();
+                    scrollToIndex(0);
+                }, 100);
+            }
+            
+            initCarousel('.carousel-track', '.prev-btn', '.next-btn');
+            
+            initCarousel('.carousel-track-new', '.prev-btn-new', '.next-btn-new');
+        });
+    </script>
+</body>
+</body>
+</html>

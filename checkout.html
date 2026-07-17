@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Оформление заказа — MLShop</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="header-wrap">
+                <a href="index.html" class="logo-link">
+                    <div class="logo">MLShop</div>
+                </a>
+                <nav class="nav-left">
+                    <a href="index.html#new">Новое</a>
+                    <a href="catalog.html">Электроника</a>
+                    <a href="index.html#discounts">Скидки</a>
+                </nav>
+                <div class="nav-right">
+                    <a href="catalog.html">
+                        <img src="img/search.png" alt="Поиск" class="icon-search">
+                    </a>
+                    <a href="cart.html">
+                        <img src="img/Heart.png" alt="Избранное">
+                    </a>
+                    <a href="profile.html">
+                        <img src="img/account.png" alt="Профиль" class="icon-profile">
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <div class="container">
+            <h1 class="checkout-title">Оформление заказа</h1>
+            
+            <div class="checkout-wrapper">
+                <div class="checkout-form">
+                    <h2 class="form-title">Данные для оплаты</h2>
+                    
+                    <form id="paymentForm" onsubmit="return submitOrder(event)">
+                        <div class="form-group">
+                            <label for="cardNumber">Номер карты</label>
+                            <input type="text" id="cardNumber" placeholder="0000 0000 0000 0000" maxlength="19" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="cardExpiry">Срок использования</label>
+                            <input type="text" id="cardExpiry" placeholder="ММ / ГГ" maxlength="7" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="cardCvv">Код с обратной стороны (CVV)</label>
+                            <input type="password" id="cardCvv" placeholder="***" maxlength="4" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="cardEmail">Почта для чека</label>
+                            <input type="email" id="cardEmail" placeholder="example@mail.ru" required>
+                        </div>
+                        
+                        <button type="submit" class="btn-pay">Оплатить заказ</button>
+                    </form>
+                </div>
+                
+                <div class="checkout-image">
+                    <img src="img/bank1.jpg" alt="Оплата">
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p>© 2026 MLShop. Все права защищены.</p>
+        </div>
+    </footer>
+
+    <script>
+        function submitOrder(event) {
+            event.preventDefault();
+            
+            const cardNumber = document.getElementById('cardNumber').value;
+            const cardExpiry = document.getElementById('cardExpiry').value;
+            const cardCvv = document.getElementById('cardCvv').value;
+            const cardEmail = document.getElementById('cardEmail').value;
+            
+            if (cardNumber.replace(/\s/g, '').length < 16) {
+                alert('❌ Пожалуйста, введите полный номер карты (16 цифр).');
+                return false;
+            }
+            
+            if (cardExpiry.replace(/\s/g, '').length < 5) {
+                alert('❌ Пожалуйста, введите срок действия (ММ / ГГ).');
+                return false;
+            }
+            
+            if (cardCvv.length < 3) {
+                alert('❌ Пожалуйста, введите код CVV (3 или 4 цифры).');
+                return false;
+            }
+            
+            if (!cardEmail.includes('@') || !cardEmail.includes('.')) {
+                alert('❌ Пожалуйста, введите корректный email.');
+                return false;
+            }
+            
+            alert('✅ Заказ успешно оформлен!\n\n' +
+                  '📧 Чек отправлен на: ' + cardEmail + '\n\n' +
+                  'Спасибо за покупку!');
+            
+            document.getElementById('paymentForm').reset();
+            return false;
+        }
+
+        document.addEventListener('DOMContentLoaded', function() {
+            const cardNumberInput = document.getElementById('cardNumber');
+            cardNumberInput.addEventListener('input', function(e) {
+                let value = this.value.replace(/\D/g, '');
+                if (value.length > 16) value = value.slice(0, 16);
+                let formatted = '';
+                for (let i = 0; i < value.length; i++) {
+                    if (i > 0 && i % 4 === 0) formatted += ' ';
+                    formatted += value[i];
+                }
+                this.value = formatted;
+            });
+            
+            const expiryInput = document.getElementById('cardExpiry');
+            expiryInput.addEventListener('input', function(e) {
+                let value = this.value.replace(/\D/g, '');
+                if (value.length > 4) value = value.slice(0, 4);
+                if (value.length >= 2) {
+                    const month = parseInt(value.slice(0, 2));
+                    if (month > 12) {
+                        this.value = '12' + value.slice(2);
+                        return;
+                    }
+                }
+                let formatted = '';
+                for (let i = 0; i < value.length; i++) {
+                    if (i === 2) formatted += ' / ';
+                    formatted += value[i];
+                }
+                this.value = formatted;
+            });
+            
+            const cvvInput = document.getElementById('cardCvv');
+            cvvInput.addEventListener('input', function(e) {
+                this.value = this.value.replace(/\D/g, '').slice(0, 4);
+            });
+        });
+    </script>
+</body>
+</html>
