@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Карточка товара — MLShop</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="header-wrap">
+                <a href="index.html" class="logo-link">
+                    <div class="logo">MLShop</div>
+                </a>
+                <nav class="nav-left">
+                    <a href="index.html#new">Новое</a>
+                    <a href="catalog.html">Электроника</a>
+                    <a href="index.html#discounts">Скидки</a>
+                </nav>
+                <div class="nav-right">
+                    <a href="catalog.html">
+                        <img src="img/search.png" alt="Поиск" class="icon-search">
+                    </a>
+                    <a href="cart.html">
+                        <img src="img/Heart.png" alt="Корзина">
+                    </a>
+                    <a href="profile.html">
+                        <img src="img/account.png" alt="Профиль" class="icon-profile">
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <div class="container">
+            <div class="product-page">
+                <div class="product-gallery">
+                    <div class="product-main-image">
+                        <img src="img/len1.jpg" alt="Фото товара" id="mainImage">
+                    </div>
+                </div>
+
+                <div class="product-info">
+                    <h1 class="product-title" id="productTitle">Lenovo IdeaPad 3 15IIL05</h1>
+                    <p class="product-description" id="productDescription">
+                        Мощный ноутбук для работы и учебы. Оснащен процессором Intel Core i5, 
+                        8 ГБ оперативной памяти и SSD-накопителем на 256 ГБ. 
+                        Идеально подходит для повседневных задач и мультимедиа.
+                    </p>
+                    
+                    <div class="product-colors">
+                        <span class="color-label">Цвета:</span>
+                        <div class="color-options">
+                            <span class="color-circle" style="background-color: #ffffff; border: 2px solid #ddd;"></span>
+                            <span class="color-circle" style="background-color: #000000;"></span>
+                            <span class="color-circle" style="background-color: #808080;"></span>
+                            <span class="color-circle" style="background-color: #4A90D9;"></span>
+                            <span class="color-circle" style="background-color: #FF6B00;"></span>
+                        </div>
+                    </div>
+
+                    <div class="product-price-large" id="productPrice">49 999 ₽</div>
+
+                    <div class="product-actions">
+                        <a href="checkout.html?id=1" class="btn-order">Заказать сейчас</a>
+                        <button class="btn-cart" id="addToCartBtn">Добавить в корзину</button>
+                    </div>
+                    
+                    <div id="cartMessage" class="cart-message" style="display: none;"></div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p>© 2026 MLShop. Все права защищены.</p>
+        </div>
+    </footer>
+
+    <script>
+        const products = [
+            { id: 1, name: "Lenovo IdeaPad 3 15IIL05", price: 49999, img: "img/len1.jpg", description: "Мощный ноутбук для работы и учебы. Оснащен процессором Intel Core i5, 8 ГБ оперативной памяти и SSD-накопителем на 256 ГБ. Идеально подходит для повседневных задач и мультимедиа." },
+            { id: 2, name: "Apple 2024 MacBook Air 15", price: 39999, img: "img/ap1.jpg", description: "Тонкий и легкий ноутбук с дисплеем Retina 15 дюймов. Процессор Apple M3, 16 ГБ объединенной памяти и SSD на 512 ГБ. Обеспечивает невероятную производительность и время автономной работы до 18 часов." },
+            { id: 3, name: "Apple MacBook Air M2", price: 18999, img: "img/ap2.jpg", description: "Компактный ноутбук с чипом M2, 8 ГБ памяти и SSD 256 ГБ. Дисплей Retina 13.6 дюймов, клавиатура с подсветкой и длительное время работы от батареи." },
+            { id: 4, name: "MacBook Air 13", price: 24999, img: "img/ap3.jpg", description: "Легендарный ноутбук с процессором Intel Core i5, 8 ГБ ОЗУ и SSD 256 ГБ. Идеален для студентов и офисной работы." },
+            { id: 5, name: "Apple Watch SE (2nd Gen)", price: 31999, img: "img/aw1.jpg", description: "Умные часы с большим дисплеем, датчиком сердечного ритма и GPS. Отслеживают активность, сон и уведомления. Идеальны для здорового образа жизни." },
+            { id: 6, name: "Apple Watch Series 10", price: 45999, img: "img/aw2.jpg", description: "Флагманские умные часы с дисплеем всегда включен, новейшим датчиком ЭКГ и пульсоксиметром. Современный дизайн и расширенный функционал." },
+            { id: 7, name: "Apple Watch SE 3", price: 18999, img: "img/aw3.jpg", description: "Доступные умные часы с базовым набором функций: отслеживание активности, уведомления, датчик сердечного ритма. Отличный выбор для начинающих." },
+            { id: 8, name: "Motorola Edge 30 Pro", price: 10000, img: "img/moto30.jpg", description: "Флагманский смартфон с процессором Snapdragon 8 Gen 1, 8 ГБ ОЗУ и 128 ГБ памяти. Камера 108 Мп, быстрая зарядка и AMOLED-дисплей 144 Гц." },
+            { id: 9, name: "Motorola Moto g24", price: 9999, img: "img/motog24.jpg", description: "Бюджетный смартфон с большим 6.5-дюймовым дисплеем, процессором Snapdragon 680 и аккумулятором на 5000 мАч. Отлично подходит для повседневного использования." },
+            { id: 10, name: "Samsung Galaxy S25 128GB", price: 11999, img: "img/ss25.jpg", description: "Инновационный смартфон с камерой 200 Мп, процессором Exynos 2500 и 128 ГБ памяти. Дисплей Dynamic AMOLED 2X с частотой 120 Гц." },
+            { id: 11, name: "Samsung Galaxy S24", price: 10999, img: "img/ss24.jpg", description: "Флагман прошлого поколения с камерой 50 Мп, процессором Exynos 2400 и 128 ГБ памяти. Отличный баланс цены и производительности." },
+            { id: 12, name: "Samsung Galaxy S26", price: 15999, img: "img/ss26.jpg", description: "Самый новый флагман с генеративным искусственным интеллектом, камерой 200 Мп и процессором Exynos 2600. Максимальная производительность и инновации." },
+            { id: 13, name: "Apple iPhone 15", price: 8999, img: "img/iP15.jpg", description: "Базовый смартфон с чипом A16 Bionic, 6.1-дюймовым дисплеем и 128 ГБ памяти. Камера 48 Мп и порт USB-C." },
+            { id: 14, name: "Apple iPhone 16", price: 9999, img: "img/iP16.jpg", description: "Новейший смартфон с чипом A18 Bionic, 6.1-дюймовым дисплеем и 128 ГБ памяти. Улучшенная камера и новые возможности для фотографии." },
+            { id: 15, name: "Apple iPhone 17", price: 14999, img: "img/iP17.jpg", description: "Флагманский смартфон с чипом A19 Pro, 6.3-дюймовым дисплеем ProMotion и 256 ГБ памяти. Инновационная камера и искусственный интеллект." },
+            { id: 16, name: "Lenovo IdeaPad 3", price: 29999, img: "img/len1.jpg", description: "Универсальный ноутбук с процессором AMD Ryzen 5, 16 ГБ ОЗУ и SSD 512 ГБ. Отличный выбор для работы и учебы." }
+        ];
+
+        function getCart() {
+            const cartData = localStorage.getItem('cart');
+            return cartData ? JSON.parse(cartData) : [];
+        }
+
+        function saveCart(cart) {
+            localStorage.setItem('cart', JSON.stringify(cart));
+        }
+
+        function addToCart(productId, quantity = 1) {
+            const cart = getCart();
+            const existingItem = cart.find(item => item.id === productId);
+            
+            if (existingItem) {
+                existingItem.quantity += quantity;
+            } else {
+                cart.push({ id: productId, quantity: quantity });
+            }
+            
+            saveCart(cart);
+            return cart;
+        }
+
+        function getProductFromURL() {
+            const params = new URLSearchParams(window.location.search);
+            const id = params.get('id');
+            if (!id) return null;
+            return products.find(p => p.id == id) || null;
+        }
+
+        function showMessage(text, isSuccess = true) {
+            const msg = document.getElementById('cartMessage');
+            msg.textContent = text;
+            msg.style.display = 'block';
+            msg.style.color = isSuccess ? '#28a745' : '#dc3545';
+            msg.style.fontWeight = 'bold';
+            msg.style.marginTop = '15px';
+            msg.style.padding = '10px';
+            msg.style.borderRadius = '8px';
+            msg.style.backgroundColor = isSuccess ? '#d4edda' : '#f8d7da';
+            msg.style.border = '1px solid ' + (isSuccess ? '#c3e6cb' : '#f5c6cb');
+            
+            setTimeout(() => {
+                msg.style.display = 'none';
+            }, 3000);
+        }
+
+        document.addEventListener('DOMContentLoaded', function() {
+            const product = getProductFromURL();
+            
+            if (product) {
+                document.getElementById('mainImage').src = product.img;
+                document.getElementById('productTitle').textContent = product.name;
+                document.getElementById('productDescription').textContent = product.description;
+                document.getElementById('productPrice').textContent = product.price.toLocaleString() + ' ₽';
+                
+                const orderBtn = document.querySelector('.btn-order');
+                if (orderBtn) {
+                    orderBtn.href = 'checkout.html?id=' + product.id;
+                }
+                
+                const addBtn = document.getElementById('addToCartBtn');
+                if (addBtn) {
+                    addBtn.addEventListener('click', function() {
+                        addToCart(product.id, 1);
+                        showMessage('✅ Товар добавлен в корзину!', true);
+                        
+                        this.textContent = '✓ Добавлено!';
+                        this.style.backgroundColor = '#28a745';
+                        setTimeout(() => {
+                            this.textContent = 'Добавить в корзину';
+                            this.style.backgroundColor = '#0050B3';
+                        }, 2000);
+                    });
+                }
+            } else {
+                document.getElementById('productTitle').textContent = 'Товар не найден';
+            }
+        });
+    </script>
+</body>
+</html>
